@@ -18,7 +18,7 @@
     <br>
     <br>
     <div class="flex" *ngFor="let quiz of quizData; let quesIndex=index">
-          {{quiz.Question}}
+          {{quiz.question}}
         <br>
         <ng-container *ngFor="let option of quiz.answers">
             <button #answers type="button" (click)="clickedAnswer(option, quesIndex)"

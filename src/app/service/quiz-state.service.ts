@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Quiz } from '../modal/quiz.modal';
+import { Quiz } from '../modal/quiz.model';
 
 @Injectable({providedIn: 'root'})
 export class QuizStateService {

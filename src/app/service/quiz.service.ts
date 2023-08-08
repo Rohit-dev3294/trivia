@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Answer, Question, Quiz, QuizResponse, QuizCategory, QuizCategoryResponse } from '../modal/quiz.modal';
+import { Answer, Question, Quiz, QuizResponse, QuizCategory, QuizCategoryResponse } from '../modal/quiz.model';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { map } from 'rxjs/operators';
@@ -47,7 +47,7 @@ function getQuestions(results: Question[]): Quiz[] {
       result?.incorrect_answers
     );
     quiz = {
-      Question: question,
+      question: question,
       correctAnswer: result?.correct_answer,
       answers: answer,
     };

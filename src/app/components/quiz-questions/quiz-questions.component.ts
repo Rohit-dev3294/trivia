@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Answer, Quiz, QuizCategory, QuizCategoryResponse } from 'src/app/modal/quiz.modal';
+import { Answer, Quiz, QuizCategory, QuizCategoryResponse } from 'src/app/modal/quiz.model';
 import { QuizStateService } from 'src/app/service/quiz-state.service';
 import { QuizService } from 'src/app/service/quiz.service';
 
@@ -41,7 +41,6 @@ export class QuizQuestionsComponent  {
       )
       .subscribe((data: Quiz[]) => {
         this.quizData = data;
-        console.log(this.quizData);
       });
   }
 
