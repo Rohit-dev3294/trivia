@@ -1,13 +1,13 @@
 <h2>QUIZ MAKER</h2>
 <div class="container">
     <div class="question">
-        <select class="form-select" [(ngModel)]="selectedCategory">
-            <option [ngValue]="selectedCategory" id="Select a category" disabled selected>{{selectedCategory.name}}</option>
+        <select class="form-select" [(ngModel)]="selectedCategory" id="categorySelect">
+            <option [ngValue]="selectedCategory" disabled selected>{{selectedCategory.name}}</option>
             <option *ngFor="let category of trivia?.trivia_categories" [id]="category" [ngValue]="category">
                 {{category.name}}</option>
         </select>
-        <select class="form-select" [(ngModel)]="selectedDifficulty">
-            <option value="Select difficulty" id="Select difficulty" disabled selected>Select difficulty</option>
+        <select class="form-select" [(ngModel)]="selectedDifficulty" id="difficultySelect">
+            <option value="Select difficulty" disabled selected>Select difficulty</option>
             <option id="Easy" value="Easy">Easy</option>
             <option id="Medium" value="Medium">Medium</option>
             <option id="Hard" value="Hard">Hard</option>
