@@ -1,0 +1,34 @@
+<h2>QUIZ MAKER</h2>
+<div class="container">
+    <div class="question">
+        <select class="form-select" [(ngModel)]="selectedCategory">
+            <option [ngValue]="selectedCategory" id="Select a category" disabled selected>{{selectedCategory.name}}</option>
+            <option *ngFor="let category of trivia?.trivia_categories" [id]="category" [ngValue]="category">
+                {{category.name}}</option>
+        </select>
+        <select class="form-select" [(ngModel)]="selectedDifficulty">
+            <option value="Select difficulty" id="Select difficulty" disabled selected>Select difficulty</option>
+            <option id="Easy" value="Easy">Easy</option>
+            <option id="Medium" value="Medium">Medium</option>
+            <option id="Hard" value="Hard">Hard</option>
+        </select>
+        <button type="button" class="btn btn-outline-secondary" id="createBtn"
+            (click)="getQuestionList()">Create</button>
+    </div>
+    <br>
+    <br>
+    <div class="flex" *ngFor="let quiz of quizData; let quesIndex=index">
+          {{quiz.Question}}
+        <br>
+        <ng-container *ngFor="let option of quiz.answers">
+            <button #answers type="button" (click)="clickedAnswer(option, quesIndex)"
+                class="btn options" [id]="option?.answer"
+                [ngClass]="(option?.selected)? 'btn-success' : 'btn-outline-success'">{{option?.answer}}</button>
+        </ng-container>
+        <br><br>
+    </div>
+    <br>
+    <button type="button" class="btn btn-secondary" id="submit" *ngIf="selectedAnswer>0 && selectedAnswer ==quizData?.length"
+        (click)="submit()">submit</button>
+    <br>
+</div>
