@@ -1,12 +1,12 @@
 <h2>RESULT</h2>
 
 <div class="flex" *ngFor="let quiz of quizData">
-  <div>
-  {{quiz?.question}}
-</div>
+  <div [innerHTML]="quiz?.question">
+  </div>
   <br>
   <ng-container *ngFor="let option of quiz.answers">
-    <button type="button" class="btn options" [ngClass]="getBtnClass(option,quiz)">{{option?.answer}}</button>
+    <button type="button" [innerHTML]="option?.answer" class="btn options"
+      [ngClass]="getBtnClass(option,quiz)"></button>
   </ng-container>
   <br>
 </div>

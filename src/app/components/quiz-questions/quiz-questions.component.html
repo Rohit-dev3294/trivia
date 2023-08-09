@@ -18,12 +18,12 @@
     <br>
     <br>
     <div class="flex" *ngFor="let quiz of quizData; let quesIndex=index">
-          {{quiz.question}}
+        <div [innerHTML]="quiz.question"></div>
         <br>
         <ng-container *ngFor="let option of quiz.answers">
             <button #answers type="button" (click)="clickedAnswer(option, quesIndex)"
-                class="btn options" [id]="option?.answer"
-                [ngClass]="(option?.selected)? 'btn-success' : 'btn-outline-success'">{{option?.answer}}</button>
+            [innerHTML]="option?.answer" class="btn options" [id]="option?.answer"
+                [ngClass]="(option?.selected)? 'btn-success' : 'btn-outline-success'"></button>
         </ng-container>
         <br><br>
     </div>
